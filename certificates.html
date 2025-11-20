@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,19 +16,19 @@
     <canvas id="bg-canvas"></canvas>
 
     <nav class="navbar">
-        <div class="logo">Portfolio.</div>
+        <div class="logo">Ritiz<span class="text-gold">.</span></div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="projects.html">Work</a></li>
+            <li><a href="index.html#about">Vision</a></li>
+            <li><a href="projects.html">Projects</a></li>
             <li><a href="certificates.html" class="active">Certificates</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="index.html#contact">Connect</a></li>
         </ul>
     </nav>
 
     <section class="section" style="padding-top: 150px;">
         <div class="container">
-            <h2 class="section-title">My Certifications</h2>
+            <h2 class="section-title">My <span class="text-gold">Credentials</span></h2>
             <div class="cert-grid">
                 <div class="cert-card">
                     <div class="cert-icon">🏆</div>
@@ -36,27 +37,59 @@
                     <p class="date">2024</p>
                     <p class="details">Supervised Machine Learning: Regression and Classification, Advanced Learning
                         Algorithms, Unsupervised Learning.</p>
+                    <a href="https://www.coursera.org/account/accomplishments/specialization/2JJN2ADLK2EU"
+                        target="_blank" class="cta-button cta-button-small">view certificate</a>
                 </div>
                 <div class="cert-card">
                     <div class="cert-icon">📱</div>
-                    <h3>Introduction to Android Development</h3>
+                    <h3>Android Development</h3>
                     <p>Meta (Coursera)</p>
                     <p class="date">2025</p>
                     <p class="details">Android Studio, UI Design, Kotlin basics, and mobile app lifecycle.</p>
+                    <a href="https://www.coursera.org/account/accomplishments/verify/XBKOPDFAW8HL" target="_blank"
+                        class="cta-button cta-button-small">view certificate</a>
                 </div>
                 <div class="cert-card">
                     <div class="cert-icon">💻</div>
-                    <h3>Introduction to Kotlin Programming</h3>
+                    <h3>Android App Capstone</h3>
                     <p>Meta (Coursera)</p>
                     <p class="date">2025</p>
-                    <p class="details">Kotlin syntax, OOP, collections, and functional programming concepts.</p>
+                    <p class="details">MVVM architecture, Room Database, ktor, API fetching, liveState , coroutines,
+                        navigation</p>
+                    <a href="https://www.coursera.org/account/accomplishments/verify/6EKYWZKHQ3Z1" target="_blank"
+                        class="cta-button cta-button-small">view certificate</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Let's <span class="text-gold">Build</span></h2>
+            <div class="contact-content">
+                <p class="contact-info">
+                    Email: <a href="mailto:ritiztech@gmail.com" class="text-gold">ritiztech@gmail.com</a><br>
+                    Phone: (737)-368 5690
+                </p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/ritizadhikari/" target="_blank" class="social-icon"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/ritiz1" target="_blank" class="social-icon"><i
+                            class="fab fa-github"></i></a>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Message" rows="5" required></textarea>
+                    <button type="submit" class="cta-button"
+                        style="background: var(--accent-gold); color: #000; border: none;">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2024 Ritiz Adhikari. All rights reserved.</p>
+        <p>&copy; 2024 Ritiz Adhikari. Building the Future.</p>
     </footer>
 
     <script src="script.js"></script>
