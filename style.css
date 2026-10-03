@@ -542,14 +542,22 @@ html { scroll-padding-top: calc(var(--nav-height) + 24px); }
 .section-action { text-align: center; margin-top: 40px; }
 .page-section { padding-top: 150px; }
 .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.project-card { cursor: default; scroll-margin-top: calc(var(--nav-height) + 24px); }
+.project-card { display: flex; cursor: default; scroll-margin-top: calc(var(--nav-height) + 24px); }
+.card-content { display: flex; flex-direction: column; width: 100%; min-width: 0; }
+.card-content h3 { min-height: 2.4em; line-height: 1.2; }
+.card-content .tech-stack { min-height: 3.4em; }
+.card-content > .project-link { align-self: flex-start; margin-top: auto; padding-top: 24px; }
+.card-content > p:last-of-type { margin-bottom: 0; }
 .project-card::before { pointer-events: none; }
 .card-content > p:not(.tech-stack):not(.date) { color: #ccc; line-height: 1.7; }
 .date { color: #aaa; font-size: .9rem; margin-bottom: 12px; }
 .tech-stack { line-height: 1.7; }
 .project-details { padding-left: 20px; color: #bbb; line-height: 1.75; margin-top: 20px; }
 .project-details li + li { margin-top: 12px; }
-.project-link, .resume-link { display: inline-block; color: var(--accent-primary); margin-top: 22px; text-underline-offset: 5px; }
+.project-link, .resume-link { display: inline-block; color: #ccc; margin-top: 22px; text-decoration: none; transition: color .2s ease; }
+.project-link:visited, .resume-link:visited { color: #ccc; }
+.project-link:hover, .resume-link:hover { color: var(--accent-gold); }
+.project-link span { margin-left: 6px; color: #a9a9a9; }
 .cert-card p { line-height: 1.8; }
 .cert-card .date { margin-bottom: 16px; }
 .contact-intro { color: #ccc; line-height: 1.8; margin-bottom: 24px; }
@@ -580,6 +588,7 @@ a:focus-visible { outline: 2px solid var(--accent-gold); outline-offset: 5px; }
     .contact-content { gap: 30px; }
     .project-card, .cert-card, .contact-panel { padding: 24px; }
     .card-content h3 { font-size: 1.5rem; }
+    .card-content h3, .card-content .tech-stack { min-height: 0; }
     .cta-button { padding: 14px 22px; font-size: .85rem; letter-spacing: 1px; }
     .skill-tags { gap: 10px; }
     .skill-tags span { padding: 8px 14px; }
