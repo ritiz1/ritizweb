@@ -1,102 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Ritiz Adhikari’s Android, backend, and applied AI projects: Adaptive AI Learning System, RawThoughts, Dristi AI, and OOTD.">
+    <meta name="theme-color" content="#0a0a0a">
     <title>Projects | Ritiz Adhikari</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <canvas id="bg-canvas"></canvas>
-
-    <nav class="navbar">
-        <div class="logo">Ritiz<span class="text-gold">.</span></div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#about">Vision</a></li>
-            <li><a href="projects.html" class="active">Projects</a></li>
-            <li><a href="certificates.html">Certificates</a></li>
-            <li><a href="index.html#contact">Connect</a></li>
-        </ul>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+    <nav class="navbar" aria-label="Main navigation">
+        <a class="logo" href="index.html">Ritiz<span class="text-gold">.</span></a>
+        <ul class="nav-links"><li><a href="index.html#home">Home</a></li><li><a href="index.html#about">About</a></li><li><a href="projects.html" class="active" aria-current="page">Projects</a></li><li><a href="certificates.html">Activities</a></li><li><a href="index.html#contact">Connect</a></li></ul>
     </nav>
+    <main id="main">
 
-    <section class="section" style="padding-top: 150px;">
-        <div class="container">
-            <h2 class="section-title">All <span class="text-gold">Projects</span></h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="card-content">
-                        <h3>Kundali AI</h3>
-                        <p class="tech-stack text-gold">B2C • Mobile • AI</p>
-                        <p>An Android Astrology Assistant featuring real-time
-                            speech-to-speech interaction, and MVVM architecture.</p>
-                        <a href="https://github.com/ritiz1/kundaliAI" target="_blank" class="cta-button">View
-                            Project</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="card-content">
-                        <h3>AI Interview Coach</h3>
-                        <p class="tech-stack text-gold">GenAI • EdTech</p>
-                        <p>Designed core GenAI architecture for personalized interview prep. Features dynamic DSA
-                            coaching and performance reporting.</p>
-                        <a href="https://github.com/madmax-10/hackTexas" target="_blank" class="cta-button">View
-                            Project</a>
-
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="card-content">
-                        <h3>Enrollment Analysis</h3>
-                        <p class="tech-stack">Data Science • Analytics</p>
-                        <p>Analyzed 5-year enrollment trends at Texas State, finding correlations between SAT scores and
-                            enrollment based on demographic factors.
-                        </p>
-                        <a href="https://dataverse.tdl.org/dataset.xhtml?persistentId=doi:10.18738/T8/S7QQNM"
-                            target="_blank" class="cta-button">View
-                            Project</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <section class="section page-section"><div class="container">
+        <h1 class="section-title">Selected <span class="text-gold">Projects</span></h1>
+        <p class="section-intro">A closer look at the systems, architecture, and mobile experiences I've built.</p>
+        <div class="project-grid"><article id="adaptive-learning" class="project-card"><div class="card-content">
+        <p class="date">Jun 2026 - Aug 2026</p><h3>Adaptive AI Learning System</h3>
+        <p class="tech-stack text-gold">Python · FastAPI · LangGraph · PostgreSQL</p>
+        <p>A stateful learning agent that adapts diagnosis, teaching, practice, and evaluation to each learner.</p><ul class="project-details"><li>Designed a LangGraph workflow that routes learners based on evolving learner state.</li><li>Persisted concept mastery, confidence, misconceptions, and interaction evidence in PostgreSQL across sessions.</li><li>Exposed the workflow through FastAPI for a native Android client, with dependency-aware concept resolution, controlled tool calling, and deterministic state updates.</li></ul>
+            <a class="project-link" href="https://github.com/ritiz1/AdaptiveLearningAgent" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
+</div></article><article id="rawthoughts" class="project-card"><div class="card-content">
+        <p class="date">Feb 2026 - May 2026</p><h3>RawThoughts</h3>
+        <p class="tech-stack text-gold">Kotlin · Jetpack Compose · Room · WorkManager · Supabase</p>
+        <p>An offline-first book platform with reliable synchronization and streamed AI chapter generation.</p><ul class="project-details"><li>Architected UI, domain, and data layers using MVVM, Hilt, StateFlow, and unidirectional data flow.</li><li>Used Room as the source of truth and WorkManager for queued writes, connectivity-aware retries, and synchronization with Supabase.</li><li>Integrated authenticated Supabase Edge Functions and Server-Sent Events to stream Gemini responses and generate structured book chapters.</li></ul>
+    </div></article><article id="dristi-ai" class="project-card"><div class="card-content">
+        <p class="date">Nov 2025 - Jan 2026</p><h3>Dristi AI</h3>
+        <p class="tech-stack text-gold">Kotlin · Jetpack Compose · Ktor · Django REST Framework · Gemini</p>
+        <p>A full-stack Android assistant with secure authentication and personalized, multi-turn AI conversations.</p><ul class="project-details"><li>Built a native Android client backed by Django REST Framework.</li><li>Implemented OTP-verified JWT authentication, encrypted token storage, profile onboarding, and protected REST endpoints.</li><li>Integrated Google Places and an astrology API to persist birth-chart data, then grounded Gemini conversations in server-side user data and conversation history.</li></ul>
+    </div></article><article id="ootd" class="project-card"><div class="card-content">
+        <p class="date">Sep 2026 · TXST Shipathon</p><h3>OOTD</h3>
+        <p class="tech-stack text-gold">Kotlin · Jetpack Compose · AI outfit recommendations</p>
+        <p>An award-winning hackathon prototype for AI outfit recommendations.</p><ul class="project-details"><li>Designed the UI/UX and implemented the entire Android frontend, owning the mobile side of the team project.</li><li>Collaborated with a backend teammate to deliver a prototype that won a hackathon award at TXST Shipathon.</li></ul>
+            <a class="project-link" href="https://github.com/ritiz1/OOTD" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
+</div></article></div>
+        <div class="section-action"><a href="https://github.com/ritiz1" target="_blank" rel="noopener noreferrer" class="cta-button">Visit My GitHub</a></div>
+    </div></section>
     <section id="contact" class="section">
         <div class="container">
-            <h2 class="section-title">Let's <span class="text-gold">Build</span></h2>
+            <h2 class="section-title">Let's <span class="text-gold">Connect</span></h2>
             <div class="contact-content">
-                <p class="contact-info">
-                    Email: <a href="mailto:ritiztech@gmail.com" class="text-gold">ritiztech@gmail.com</a><br>
-                    Phone: (737)-368 5690
-                </p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/ritizadhikari/" target="_blank" class="social-icon"><i
-                            class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/ritiz1" target="_blank" class="social-icon"><i
-                            class="fab fa-github"></i></a>
+                <div>
+                    <p class="contact-intro">Have a software engineering opportunity or a project in mind? I'd love to hear from you.</p>
+                    <p class="contact-info">Email: <a href="mailto:ritiztech@gmail.com" class="text-gold">ritiztech@gmail.com</a><br>
+                    Phone: <a href="tel:+17373685690">(737) 368-5690</a></p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/ritizadhikari/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+                        <a href="https://github.com/ritiz1" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+                    </div>
                 </div>
-                <form class="contact-form">
-                    <input type="text" placeholder="Name" required>
-                    <input type="email" placeholder="Email" required>
-                    <textarea placeholder="Message" rows="5" required></textarea>
-                    <button type="submit" class="cta-button"
-                        style="background: var(--accent-gold); color: #000; border: none;">Send Message</button>
-                </form>
+                <div class="contact-panel">
+                    <h3 class="text-gold">Start a conversation</h3>
+                    <p>For internships, collaboration, or a conversation about Android, backend systems, and applied AI.</p>
+                    <a href="mailto:ritiztech@gmail.com?subject=Let%27s%20connect" class="cta-button">Email Ritiz</a>
+                    <p class="details">Opens your email app. You can also copy the email address above.</p>
+                    <a href="Ritiz-Adhikari-Resume.pdf" class="resume-link" download>Download my resume (PDF)</a>
+                </div>
             </div>
         </div>
     </section>
-
-    <footer>
-        <p>&copy; 2024 Ritiz Adhikari. Building the Future.</p>
-    </footer>
-
+    </main>
+    <footer><p>&copy; <span data-current-year>2026</span> Ritiz Adhikari. Built with purpose.</p></footer>
     <script src="script.js"></script>
 </body>
-
 </html>

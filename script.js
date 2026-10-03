@@ -97,7 +97,7 @@ class Particle {
             let dy = mouse.y - this.y;
             let distance = Math.sqrt(dx * dx + dy * dy);
 
-            if (distance < mouse.radius) {
+            if (distance > 0 && distance < mouse.radius) {
                 const forceDirectionX = dx / distance;
                 const forceDirectionY = dy / distance;
                 const maxDistance = mouse.radius;
@@ -180,7 +180,9 @@ function animate() {
         }
     });
 
-    requestAnimationFrame(animate);
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        requestAnimationFrame(animate);
+    }
 }
 
 animate();
@@ -189,9 +191,13 @@ animate();
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const target = document.getElementById(this.getAttribute('href').slice(1));
+        if (target) {
+            target.scrollIntoView({
+                behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+            });
+            history.replaceState(null, '', this.getAttribute('href'));
+        }
     });
 });
 
@@ -200,9 +206,6 @@ const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
-        } else {
-            // Optional: remove class to re-animate when scrolling up
-            // entry.target.classList.remove('show'); 
         }
     });
 });
@@ -211,4 +214,8 @@ const hiddenElements = document.querySelectorAll('.section-title, .project-card,
 hiddenElements.forEach((el) => {
     el.classList.add('hidden');
     observer.observe(el);
+});
+
+document.querySelectorAll('[data-current-year]').forEach((el) => {
+    el.textContent = new Date().getFullYear();
 });
